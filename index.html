@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Agentes de IA - Módulo 3</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d50000;
+            --secondary: #ff5252;
+            --accent: #27ae60;
+            --warning: #e67e22;
+            --danger: #c0392b;
+            --bg: #fff0f0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: #333;
+            margin: 0;
+            display: flex;
+        }
+
+        /* Barra Lateral */
+        nav {
+            width: 260px;
+            background: var(--primary);
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            color: white;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        nav h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { margin: 18px 0; }
+        nav ul li a { color: #d1d8e0; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; transition: 0.3s; }
+        nav ul li a i { margin-right: 12px; width: 20px; text-align: center; }
+        nav ul li a:hover { color: white; transform: translateX(5px); }
+
+        /* Contenido */
+        main { margin-left: 300px; padding: 40px; max-width: 1000px; width: 100%; }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero h1 { margin: 0; font-size: 2.5rem; }
+        .hero p { opacity: 0.9; font-size: 1.1rem; margin-top: 10px; }
+
+        section {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--primary); display: flex; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 i { margin-right: 15px; color: var(--secondary); }
+
+        /* Tarjetas de Clasificación */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #f8fbff;
+            border: 1px solid #e1e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+        .card i { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; font-size: 1.1rem; color: var(--primary); }
+
+        /* Caja de Ética */
+        .ethics-section { border-left: 6px solid var(--warning); background-color: #fffaf5; }
+        .ethics-section h2 i { color: var(--warning); }
+
+        /* Actividades */
+        .activity-box {
+            background: #eafaf1;
+            border: 1px dashed var(--accent);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>Módulo 3: IA</h2>
+    <ul>
+        <li><a href="#inicio">🏠 Inicio</a></li>
+        <li><a href="#conceptos">🧠 Conceptos Clave</a></li>
+        <li><a href="#tipos">🧊 Tipos de Agentes</a></li>
+        <li><a href="#entornos">🕶️ Entornos</a></li>
+        <li><a href="#apps">📱 Aplicaciones</a></li>
+        <li><a href="#etica">⚖️ Ética y Tendencias</a></li>
+        <li><a href="#actividades">📋 Actividades</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div id="inicio" class="hero">
+        <h1>Uso de Agentes de IA</h1>
+        <p>Módulo 3 • Tema 3: Conceptos, Clasificación y Ética</p>
+    </div>
+
+    <section>
+        <h2>💡 Introducción</h2>
+        <p>Los agentes de inteligencia artificial están presentes en nuestra vida diaria: desde los asistentes en nuestros celulares hasta sistemas industriales de automatización. Comprender cómo perciben su entorno y qué principios guían su comportamiento es vital para aprovechar su potencial de manera responsable y estratégica.</p>
+    </section>
+
+    
+
+    <section id="conceptos">
+        <h2>⚙️ ¿Qué es un Agente Inteligente?</h2>
+        <p>Es una entidad capaz de interactuar con su entorno de forma autónoma. Su funcionamiento se basa en tres pilares fundamentales:</p>
+        <ul>
+            <li><strong>Percepción:</strong> Utiliza <strong>sensores</strong> (cámaras, micrófonos, acelerómetros) para recibir datos del mundo.</li>
+            <li><strong>Procesamiento:</strong> Analiza la información para tomar decisiones racionales orientadas a un objetivo.</li>
+            <li><strong>Acción:</strong> Ejecuta respuestas mediante <strong>efectores</strong> (altavoces, pantallas, motores o actuadores).</li>
+        </ul>
+    </section>
+
+    <section id="tipos">
+        <h2>🤖 Clasificación de Agentes</h2>
+        <div class="grid">
+            <div class="card">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">⚡</span>
+                <h3>Reactivo Simple</h3>
+                <p>Actúa bajo reglas directas basadas en la percepción actual. No tiene memoria.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">💾</span>
+                <h3>Basado en Estado</h3>
+                <p>Mantiene una memoria de percepciones pasadas para entender mejor el mundo.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">🎯</span>
+                <h3>Basado en Objetivos</h3>
+                <p>Sus acciones buscan alcanzar una meta específica, como un sistema GPS.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 2rem; margin-bottom: 15px; display: block;">📈</span>
+                <h3>Basado en Utilidad</h3>
+                <p>Evalúa qué tan "buena" o satisfactoria es una acción para maximizar el éxito.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="entornos">
+        <h2>🗺️ Entornos de Operación</h2>
+        <p>El diseño de un agente depende totalmente del lugar donde opera:</p>
+        <ul>
+            <li><strong>Observable vs. Parcialmente observable:</strong> ¿El agente ve todo lo que sucede o solo una parte?</li>
+            <li><strong>Determinista vs. Estocástico:</strong> ¿El resultado de una acción es predecible o interviene el azar?</li>
+            <li><strong>Estático vs. Dinámico:</strong> ¿El entorno cambia mientras el agente está "pensando"?</li>
+        </ul>
+    </section>
+
+    <section id="apps">
+        <h2>💡 Aplicaciones Reales</h2>
+        <p>La IA de agentes se manifiesta en diversas herramientas:</p>
+        <ul>
+            <li><strong>Asistentes Virtuales:</strong> Siri, Alexa y Google Assistant que interpretan lenguaje natural.</li>
+            <li><strong>Sistemas de Recomendación:</strong> Algoritmos de Netflix o Amazon que personalizan tu experiencia.</li>
+            <li><strong>Educación:</strong> Tutores inteligentes que guían y personalizan el aprendizaje del estudiante.</li>
+            <li><strong>Robótica:</strong> Drones y aspiradoras autónomas que navegan evitando obstáculos.</li>
+        </ul>
+    </section>
+
+    <section id="etica" class="ethics-section">
+        <h2>🤝 Tendencias y Ética</h2>
+        <p>El desarrollo de agentes plantea retos sociales profundos. Basándonos en las recomendaciones de la <strong>UNESCO</strong>, el enfoque debe ser:</p>
+        <ul>
+            <li><strong>Transparencia:</strong> Entender cómo y por qué el agente toma una decisión.</li>
+            <li><strong>Mitigación de Sesgos:</strong> Evitar que los algoritmos repliquen prejuicios humanos.</li>
+            <li><strong>Privacidad:</strong> Proteger los datos personales que los agentes captan mediante sus sensores.</li>
+        </ul>
+        <p><strong>Nuevas fronteras:</strong> Estamos pasando de agentes individuales a <strong>sistemas multi-agente</strong> donde miles de programas colaboran o compiten para resolver tareas complejas de forma autónoma.</p>
+    </section>
+
+    <section id="actividades">
+        <h2>💻 Actividades de Aprendizaje</h2>
+        <div class="activity-box">
+            <span class="badge">Actividad 1</span>
+            <strong>El entorno cotidiano:</strong> Identifica 3 dispositivos inteligentes en tu casa u oficina. Reflexiona: ¿Qué sensores usan? ¿Cuál es su objetivo principal?
+        </div>
+        <div class="activity-box">
+            <span class="badge">Actividad 2</span>
+            <strong>Análisis Crítico:</strong> Revisa las recomendaciones de tu plataforma de streaming favorita. ¿Sientes que el algoritmo maximiza tu satisfacción o simplemente tu tiempo de permanencia?
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 • Curso de Inteligencia Artificial • Material de consulta académica</p>
+    </footer>
+</main>
+
+</body>
+</html>
